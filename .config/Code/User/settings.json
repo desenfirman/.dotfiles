@@ -1,0 +1,53 @@
+{
+    "editor.fontFamily": "Inconsolata",
+    "phpformatter.arguments": [
+        "--rules=@PSR2"
+    ],
+    "python.pythonPath": "/opt/anaconda/bin/python",
+    "window.zoomLevel": -2,
+    "workbench.colorTheme": "Mayukai Alucard",
+    "workbench.iconTheme": "eq-material-theme-icons",
+
+    "workbench.colorCustomizations": {
+         "[Material Theme]": {
+             "statusBar.background": "#6054D2",
+             "statusBar.foreground": "#f4f4f4"
+    //         "editor.background": "#2F343F",
+    //         "activityBar.background": "#2F343F",
+    //         "activityBar.border": "#2F343F",
+    //         "tab.inactiveBackground": "#2F343F",
+    //         "tab.border": "#2F343F",
+    //         "editorGroupHeader.noTabsBackground": "#2F343F",
+    //         "editorGroupHeader.tabsBackground": "#2F343F",
+    //         "sideBar.background": "#2F343F"
+         }
+    },
+    // "git.autofetch": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    // "terminal.integrated.rendererType": "dom",
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "markdown-preview-enhanced.liveUpdate": true,
+    "python.dataScience.askForKernelRestart": false,
+    // "terminal.integrated.inheritEnv": false,
+    // "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "python.dataScience.jupyterServerURI": "http://localhost:8888/?token=d2712",
+    "remote.extensionKind": {
+        "ms-azuretools.vscode-docker": "workspace"
+    },
+    "phpformatter.pharPath": "/home/desenfirman/.composer/vendor/bin/php-cs-fixer",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.customMenuBarAltFocus": false,
+    "window.menuBarVisibility": "visible",
+    "window.titleBarStyle": "custom",
+    "glassit.alpha": 220
+    
+}
