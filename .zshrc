@@ -97,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cl="clear"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -112,5 +113,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.cache}"'
 
 
