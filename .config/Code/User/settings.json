@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Inconsolata",
+    "editor.fontFamily": "'Inconsolata Medium', 'Noto Color Emoji Regular', 'monospace'",
     "phpformatter.arguments": [
         "--rules=@PSR2"
     ],
@@ -48,6 +48,11 @@
     "window.customMenuBarAltFocus": false,
     "window.menuBarVisibility": "visible",
     "window.titleBarStyle": "custom",
-    "glassit.alpha": 220
+    "glassit.alpha": 220,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.fontLigatures": null,
+    "editor.fontSize": 16
     
 }
