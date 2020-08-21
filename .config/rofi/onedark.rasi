@@ -98,3 +98,8 @@ button selected {
   border-radius: 3px;
   background-color: @emphasis;
 }
+
+configuration {
+    combi-modi: "window,drun,ssh,notion:~/.local/bin/my-notion-cli";
+    modi: "combi";
+}

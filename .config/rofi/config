@@ -1,4 +1,3 @@
 rofi.theme: /home/desenfirman/.local/share/rofi/themes/onedark.rasi
-rofi.run-shell-command:              mate-terminal -e {cmd}
-rofi.ssh-command:                    mate-terminal -e {ssh-client} {host}
+rofi.ssh-command:                    gnome-terminal -- {ssh-client} {host}
 rofi.color-window: argb:c82d303b, #7c8389, #1d1f21
