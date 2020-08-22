@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+import sys
+from os import getenv
+from notion.client import NotionClient
+
+COLLECTION_ID = "585618cad7ba496398653112ada9d51d?v=56cbbb1264014faaa6efa6d18f7fca43"
+
+def add_task(name):
+    client = NotionClient(token_v2=getenv("NOTION_TOKEN_V2"))
+    collection_target = "https://www.notion.so/" + \
+        getenv('NOTION_USERNAME') + COLLECTION_ID
+
+    try:
+        cv = client.get_collection_view(collection_target)
+        row = cv.collection.add_row()
+        row.name = name
+        cv.default_query().execute()
+        print(f"Successfully added task '{name}'")
+        sys.exit(0)
+    except Exception as e:
+        print(f"Error during adding task '{name}': {e.args}")
+        sys.exit(2)
+
+
+def main(argv):
+    name = ''
+    try:
+        action, args = argv[0], argv[1:]
+        name = args[0]
+    except Exception as e:
+        print(e.args)
+        print('my-notion-cli [action] args')
+        sys.exit(2)
+    if action == 'add_task':
+        add_task(name)
+    else:
+        print('my-notion-cli [action] args')
+        sys.exit(2)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
+

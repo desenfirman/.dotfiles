@@ -1,3 +1,4 @@
+source .env
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -114,6 +115,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# FZF Query Mode
 export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,.cache}"'
 
