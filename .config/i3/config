@@ -50,7 +50,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec --no-startup-id "rofi -show run -fullscreen True -run-shell-command '{terminal} -e {cmd}'"
-bindsym $mod+q exec ~/.config/i3/scripts/notion_companion_launch.sh
+bindsym $mod+q exec --no-startup-id "~/.config/i3/scripts/notion_companion_launch.sh"
 
 # For use with xfce4 whisker popup menu in Mint XFCE:
 # bindsym $mod+Shift+d exec dmenu_run
@@ -115,6 +115,7 @@ bindsym $mod+a focus parent
 
 workspace_auto_back_and_forth no
 
+
 set $monR eDP-1
 set $monL DP-1
 
@@ -137,12 +138,6 @@ workspace $ws3L output $monL
 workspace $ws3R output $monR
 workspace $ws4L output $monL
 workspace $ws4R output $monR
-
-# switch to workspace
-# bindsym $mod+1 workspace $ws1L, workspace $ws1R
-# bindsym $mod+2 workspace $ws2L, workspace $ws2R
-# bindsym $mod+3 workspace $ws3L, workspace $ws3R
-# bindsym $mod+4 workspace $ws4L, workspace $ws4R
 
 
 bindsym $mod+1 workspace $ws1L
@@ -207,8 +202,8 @@ bindsym $mod+r mode "resize"
 
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up 1 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down 1 #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
@@ -239,37 +234,19 @@ exec_always --no-startup-id picom -b
 #exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
 #exec /usr/libexec/gnome-settings-daemon
 
+# Color settings
 # XRESOURCES
 set_from_resource $text-color foreground
 set_from_resource $bg-color background
 
-# Color settings
-# set $bg-color  	  #1e232e
-set $inactive-bg-color   #2f343f
-#set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $inactive-bg-color          #2f343f
+set $inactive-text-color        #676E7D
+set $urgent-bg-color            #E53935
 
 
-#                        border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #424242
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #424242
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #424242
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #424242
-
-
-# XRESOURCES
-#set_from_resource $fg foreground
-#set_from_resource $bg background 
-
-# CLASS                 BORDER  BACK    TEXT    INDICATOR
-#client.focused          $bg     $bg     $fg     $bg
-#client.focused_inactive $bg     $bg     $fg     $bg 
-#client.unfocused        $bg     $bg     $fg     $bg
-#client.urgent           $bg     $bg     $fg     $bg 
-#client.placeholder      $bg     $bg     $fg     $bg 
-
-
-
-##tray-position = right
+# Client mode                   border                  background              text                    indicator
+client.focused                  $bg-color               $bg-color               $text-color             #424242
+client.unfocused                $inactive-bg-color      $inactive-bg-color      $inactive-text-color    #424242
+client.focused_inactive         $inactive-bg-color      $inactive-bg-color      $inactive-text-color    #424242
+client.urgent                   $urgent-bg-color        $urgent-bg-color        $text-color             #424242
 
