@@ -18,10 +18,18 @@ if (empty($TMUX))
 endif
 
 
-set background=dark " for the dark version
-let g:one_allow_italics = 1 " I love italic for comments
-colorscheme one
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
 
+" The configuration options should be placed before `colorscheme sonokai`.
+colorscheme xcodewwdc
+let g:signify_sign_add    = '┃'
+let g:signify_sign_change = '┃'
+let g:signify_sign_delete = '•'
+
+let g:signify_sign_show_count = 0 " Don’t show the number of deleted lines.
 
 set autochdir
 

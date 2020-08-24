@@ -15,10 +15,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'scrooloose/NERDTree'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-    " Airline Themes
+    "Airline theme
     Plug 'vim-airline/vim-airline-themes'
-    " Vim One Color Scheme
-    Plug 'rakr/vim-one'
+    "Vim xcodewwdc
+    Plug 'arzg/vim-colors-xcode'
     " Vim Visual Multi
     Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     " Vim Fuzzy Finder
@@ -37,6 +37,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround'
 
     Plug 'wakatime/vim-wakatime'
+
+    Plug 'chrisbra/Colorizer'
 
 
 call plug#end()

@@ -5,7 +5,7 @@
     ],
     "python.pythonPath": "/opt/anaconda/bin/python",
     "window.zoomLevel": -2,
-    "workbench.colorTheme": "Mayukai Alucard",
+    "workbench.colorTheme": "Material Theme",
     "workbench.iconTheme": "eq-material-theme-icons",
 
     "workbench.colorCustomizations": {
