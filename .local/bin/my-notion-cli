@@ -3,12 +3,14 @@ import sys
 from os import getenv
 from notion.client import NotionClient
 
-COLLECTION_ID = "585618cad7ba496398653112ada9d51d?v=56cbbb1264014faaa6efa6d18f7fca43"
+COLLECTION_ID = "585618cad7ba496398653112ada9d51d"
 
 def add_task(name):
     client = NotionClient(token_v2=getenv("NOTION_TOKEN_V2"))
+    view_id = "56cbbb1264014faaa6efa6d18f7fca43"
     collection_target = "https://www.notion.so/" + \
-        getenv('NOTION_USERNAME') + COLLECTION_ID
+        getenv('NOTION_USERNAME') + '/' + COLLECTION_ID \
+        + "?v=" + view_id
 
     try:
         cv = client.get_collection_view(collection_target)
@@ -22,17 +24,49 @@ def add_task(name):
         sys.exit(2)
 
 
+def view_inbox_task():
+    client = NotionClient(token_v2=getenv("NOTION_TOKEN_V2"))
+    view_id = "56cbbb1264014faaa6efa6d18f7fca43"
+    collection_target = "https://www.notion.so/" + \
+        getenv('NOTION_USERNAME') + '/' + COLLECTION_ID + \
+        '?v=' + view_id
+    cv = client.get_collection_view(collection_target)
+    filter_params = [
+        {
+            "property": "related",
+            "comparator": "enum_is_empty"
+        }
+    ]
+    print("=============================================================")
+    print(f"Name\t\t\tContext\t\t\tDue Date")
+    print("=============================================================")
+    for row in cv.build_query(filter=filter_params).execute():
+        if row.status == 'Done 🙌' or row.status == 'Archived' or \
+                row.status == 'Someday/Maybe':
+            continue
+        if len(row.related) > 0:
+            continue
+
+        print(f"{row.title}\t\t\t{row.context}\t\t\t{row.due_date}")
+    print("=============================================================")
+
+
 def main(argv):
     name = ''
     try:
-        action, args = argv[0], argv[1:]
-        name = args[0]
+        if len(argv) > 1:
+            action, args = argv[0], argv[1:]
+            name = args[0]
+        else:
+            action = argv[0]
     except Exception as e:
         print(e.args)
         print('my-notion-cli [action] args')
         sys.exit(2)
     if action == 'add_task':
         add_task(name)
+    elif action == 'view_inbox_task':
+        view_inbox_task()
     else:
         print('my-notion-cli [action] args')
         sys.exit(2)

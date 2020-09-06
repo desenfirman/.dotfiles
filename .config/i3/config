@@ -33,6 +33,9 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -fullscreen True -run-shell-
 # Notion quick add task script
 bindsym $mod+q exec --no-startup-id "~/.config/i3/scripts/notion_companion_launch.sh"
 
+# Searchable menu bar
+bindsym $mod+x exec --no-startup-id "~/.config/i3/scripts/hud-menu.py rofi"
+
 #interactive screenshot by pressing printscreen
 bindsym Print exec --no-startup-id xfce4-screenshooter -c
 #crop-area screenshot by pressing Mod + printscreen
@@ -192,6 +195,7 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom -b
+exec_always --no-startup-id .local/bin/hud-menu-service
 
 # Color settings
 # XRESOURCES

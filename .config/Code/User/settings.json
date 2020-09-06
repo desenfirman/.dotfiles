@@ -4,7 +4,7 @@
         "--rules=@PSR2"
     ],
     "python.pythonPath": "/opt/anaconda/bin/python",
-    "window.zoomLevel": -2,
+    "window.zoomLevel": -1,
     "workbench.colorTheme": "Material Theme",
     "workbench.iconTheme": "eq-material-theme-icons",
 
@@ -53,6 +53,9 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "editor.fontLigatures": null,
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    }
     
 }

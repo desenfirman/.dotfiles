@@ -8,37 +8,36 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-
-    " Better Syntax Support
-    Plug 'sheerun/vim-polyglot'
     " File Explorer
     Plug 'scrooloose/NERDTree'
-    " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    
     "Airline theme
     Plug 'vim-airline/vim-airline-themes'
-    "Vim xcodewwdc
-    Plug 'arzg/vim-colors-xcode'
+   
+    Plug 'wadackel/vim-dogrun'
+    
     " Vim Visual Multi
-    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-    " Vim Fuzzy Finder
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    "Plug 'hkupty/fzf-proj.vim'
+    " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-    Plug 'mattn/emmet-vim'
-
-    Plug 'dense-analysis/ale'
-
-    Plug 'airblade/vim-gitgutter'
+    Plug 'ryanoasis/vim-devicons'
 
     Plug 'itchyny/lightline.vim'
+    Plug 'josa42/vim-lightline-coc'
 
-    Plug 'tpope/vim-surround'
 
     Plug 'wakatime/vim-wakatime'
+    
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-    Plug 'chrisbra/Colorizer'
+    Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+    
+    Plug 'junegunn/fzf.vim'
+
+    Plug 'christoomey/vim-tmux-navigator'
+
+    Plug 'airblade/vim-rooter'
 
 
 call plug#end()
