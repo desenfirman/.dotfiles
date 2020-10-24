@@ -10,6 +10,9 @@ source $HOME/.config/nvim/appereance.vim
 " Set tab as 4-spaces
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab cindent
 
+" Set line number
+set number
+
 let g:rooter_patterns = ['=.config']
 
 "---------------------------------------------------------------------

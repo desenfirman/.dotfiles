@@ -21,20 +21,25 @@ if has('termguicolors')
   set termguicolors
 endif
 
-" The configuration options should be placed before `colorscheme sonokai`.
-colorscheme dogrun
+let g:gruvbox_material_background = 'medium'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_disable_italic_comment = 1
+let g:gruvbox_material_better_performance = 1
+
+set background=dark
+colorscheme gruvbox-material
 
 " Add the components to the lightline:
 let g:lightline = {
   \   'active': {
   \     'left': [[ 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status'  ]]
   \   },
-  \   'colorscheme': 'dogrun',
+  \   'colorscheme': 'gruvbox_material',
   \ }
 
 
 
-let g:clap_theme = 'dogrun'
+let g:clap_theme = 'gruvbox-material'
 
 let g:signify_sign_add    = '┃'
 let g:signify_sign_change = '┃'

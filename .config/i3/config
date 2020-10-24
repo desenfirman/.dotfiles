@@ -206,7 +206,7 @@ set_from_resource $unfocused-bg-color color2
 set_from_resource $urgent-bg-color color1
 set_from_resource $inactive-text-color foreground
 
-set $focused-bg-color #00FF9C
+set_from_resource $focused-bg-color color4
 
 # Client mode                   border                  background              text                    indicator
 client.focused                  $focused-bg-color       $focused-bg-color       $text-color             $focused-bg-color

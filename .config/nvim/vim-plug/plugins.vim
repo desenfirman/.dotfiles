@@ -39,5 +39,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'airblade/vim-rooter'
 
+    Plug 'sainnhe/gruvbox-material'
+
 
 call plug#end()
