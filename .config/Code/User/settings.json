@@ -4,7 +4,7 @@
         "--rules=@PSR2"
     ],
     "python.pythonPath": "/opt/anaconda/bin/python",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -3,
     "workbench.colorTheme": "Gruvbox Material Dark",
     "workbench.iconTheme": "eq-material-theme-icons",
 
@@ -57,6 +57,9 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "gruvboxMaterial.darkContrast": "soft"
+    "gruvboxMaterial.darkContrast": "soft",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
     
 }
